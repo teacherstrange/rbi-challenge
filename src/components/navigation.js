@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import '../styles/navigation.scss';
+import { getMenuList } from '../helpers/deriving';
 
 const Navigation = props => {
   return (
@@ -12,36 +13,13 @@ const Navigation = props => {
         </li>
         {Object.entries(props.menu).length > 0 &&
         Object.entries(props.sections).length > 0 ? (
-          props.menu.options.map(item => {
-            return props.sections.map(el => {
-              if (el['_id'] === item['_ref']) {
-                return (
-                  <li className="nav-item">
-                    <img
-                      src={`/images/${deriveSectionImage(
-                        el.image.asset['_ref']
-                      )}`}
-                      alt={`Image of ${el.name.en}`}
-                    />
-                    <h3>{el.name.en}</h3>
-                  </li>
-                );
-              }
-            });
-          })
+          getMenuList(props.sections, props.menu.options, 'nav-item')
         ) : (
           <></>
         )}
       </ul>
     </div>
   );
-};
-
-// Takes in a reference string from sections "db" and
-// manipulates it in a way to make it look like a valid image name.
-const deriveSectionImage = str => {
-  let arr = str.split('-');
-  return arr[1] + '-' + arr[2] + '.' + arr[3];
 };
 
 const mapStateToProps = state => {

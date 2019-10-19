@@ -13,7 +13,8 @@
   height: 100%;
   width: 100%;
   margin: 0;
-  padding: 0;
+  padding: 0.5em;
+  box-sizing: border-box;
   background: wheat;
   display: flex;
   flex-wrap: wrap;
@@ -29,7 +30,7 @@
   justify-content: center;
   background: wheat;
   img {
-    height: 9em;
+    height: 8em;
     width: auto;
   }
 
@@ -44,7 +45,7 @@
   justify-content: center;
   align-items: center;
   img {
-    height: 9em;
+    height: 8em;
     width: 80%;
   }
 }
