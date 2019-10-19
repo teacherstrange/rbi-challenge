@@ -5,9 +5,20 @@ const Navigation = props => {
   return (
     <div>
       <ul>
-        <li>Home</li>
-        {Object.entries(props.menu).length > 0 ? (
-          props.menu.options.map(opt => <p>{opt['_ref']}</p>)
+        <li>HOME</li>
+        {Object.entries(props.menu).length > 0 &&
+        Object.entries(props.sections).length > 0 ? (
+          props.menu.options.map(item => {
+            return (
+              <li>
+                {props.sections.map(el => {
+                  if (el['_id'] === item['_ref']) {
+                    return el.name.en;
+                  }
+                })}
+              </li>
+            );
+          })
         ) : (
           <></>
         )}
@@ -18,7 +29,8 @@ const Navigation = props => {
 
 const mapStateToProps = state => {
   return {
-    menu: state.menu
+    menu: state.menu,
+    sections: state.sections
   };
 };
 
