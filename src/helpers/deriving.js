@@ -16,10 +16,19 @@ export const getMenuList = (sections, menuOptions, cssClass) => {
         return (
           <Link to={`/${getURLname(el.name.en)}`}>
             <li className={cssClass}>
-              <img
-                src={`/images/${deriveSectionImage(el.image.asset['_ref'])}`}
-                alt={`Image of ${el.name.en}`}
-              />
+              {cssClass !== 'nav-item' ? (
+                <img
+                  src={`/images/${deriveSectionImage(el.image.asset['_ref'])}`}
+                  alt={`Image of ${el.name.en}`}
+                />
+              ) : (
+                <img
+                  src={`/images/${deriveSectionImage(
+                    el.carouselImage.asset['_ref']
+                  )}`}
+                  alt={`Image of ${el.name.en}`}
+                />
+              )}
               <h3>{el.name.en}</h3>
             </li>
           </Link>

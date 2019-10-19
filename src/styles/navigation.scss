@@ -15,10 +15,17 @@
   margin: 0;
   padding: 0.5em;
   box-sizing: border-box;
-  background: wheat;
+  background: #efece6;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: none;
+  }
 }
 
 .nav-item {
@@ -26,17 +33,24 @@
   width: 9em;
   list-style-type: none;
   display: flex;
+  color: black;
+
   flex-direction: column;
   justify-content: center;
-  background: wheat;
+  background: #efece6;
   img {
-    height: 8em;
+    border-radius: 0.5em;
+    height: 7em;
     width: auto;
   }
 
   h3 {
     font-family: 'Zrnic';
     text-align: center;
+  }
+  h3:hover {
+    color: red;
+    text-decoration: underline;
   }
 }
 
@@ -45,7 +59,7 @@
   justify-content: center;
   align-items: center;
   img {
-    height: 8em;
+    height: 7em;
     width: 80%;
   }
 }
