@@ -5,7 +5,7 @@ import {
 } from '../actions/actions';
 
 const initialState = {
-  menu: [],
+  menu: {},
   sections: [],
   items: [],
   error: '',

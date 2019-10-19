@@ -6,7 +6,9 @@ const Menu = props => {
   return (
     <div>
       <p>Hello</p>
-      {props.getMenu()}
+      <button onClick={() => props.getMenu()}>Clik</button>
+      {Object.entries(props.menu).length > 0 ? <p>Props</p> : <p>No Props</p>}
+      {/* {props.getMenu()} */}
     </div>
   );
 };
