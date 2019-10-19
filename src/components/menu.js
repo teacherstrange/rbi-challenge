@@ -5,16 +5,13 @@ import { getMenu, getSections } from '../actions/actions';
 const Menu = props => {
   return (
     <div>
-      {(window.onload = () => props.getSections())}
-      <p>Hello</p>
-      <button
-        onClick={() => {
+      {
+        (window.onload = () => {
           props.getMenu();
           return props.getSections();
-        }}
-      >
-        Clik
-      </button>
+        })
+      }
+      <p>Hello</p>
       {Object.entries(props.menu).length > 0 ? <p>Props</p> : <p>No Props</p>}
     </div>
   );
