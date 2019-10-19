@@ -1,12 +1,18 @@
 const express = require('express');
-
+const cors = require('cors');
 const menu = require('./data/menu.json');
 const sections = require('./data/sections.json');
 const items = require('./data/items.json');
 
 const app = express();
+app.use(cors());
 
-app.get('/api/menu', (req, res) => {
+var corsOptions = {
+  origin: 'http://localhost:3000',
+  optionsSuccessStatus: 200
+};
+
+app.get('/api/menu', cors(corsOptions), (req, res) => {
   setTimeout(() => {
     res.json(menu);
   }, 300);
