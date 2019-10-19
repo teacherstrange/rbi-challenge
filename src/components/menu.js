@@ -2,21 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getMenu, getSections } from '../actions/actions';
 import { getMenuList } from '../helpers/deriving';
+import '../styles/main.scss';
 
 const Menu = props => {
   return (
-    <div>
+    <div className="sections-main">
       {
         (window.onload = () => {
           props.getMenu();
           return props.getSections();
         })
       }
-      <p>Hello</p>
-
       {Object.entries(props.menu).length > 0 &&
       Object.entries(props.sections).length ? (
-        getMenuList(props.sections, props.menu.options, 'nav-item')
+        getMenuList(props.sections, props.menu.options, 'main-item')
       ) : (
         <p>No Props</p>
       )}

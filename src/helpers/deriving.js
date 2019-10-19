@@ -8,12 +8,13 @@ export const deriveSectionImage = str => {
 };
 
 // Returns a <li> list of menu items w/ name and image
+// that link to a specific more detailed section
 export const getMenuList = (sections, menuOptions, cssClass) => {
   return menuOptions.map(item => {
     return sections.map(el => {
       if (el['_id'] === item['_ref']) {
         return (
-          <Link to={`/`}>
+          <Link to={`/${getURLname(el.name.en)}`}>
             <li className={cssClass}>
               <img
                 src={`/images/${deriveSectionImage(el.image.asset['_ref'])}`}
@@ -26,4 +27,15 @@ export const getMenuList = (sections, menuOptions, cssClass) => {
       }
     });
   });
+};
+
+// Makes a string with spaces into a more appropriate URL string
+export const getURLname = str => {
+  let arr = str.toLowerCase().split(' ');
+  if (arr[1] === '&') {
+    console.log(arr[0] + arr[2]);
+    return arr[0] + arr[2];
+  }
+  console.log(arr.join(''));
+  return arr.join('');
 };
