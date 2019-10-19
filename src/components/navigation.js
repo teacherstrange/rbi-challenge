@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-// import "../../public/images"
+import '../styles/navigation.scss';
 
 const Navigation = props => {
   return (
-    <div>
-      <ul>
-        <li>
-          <img src="" />
+    <div className="nav-container">
+      <ul className="nav-list">
+        <li className="nav-item logo">
+          <img src="/images/logo.png" />
           <h3>HOME</h3>
         </li>
         {Object.entries(props.menu).length > 0 &&
@@ -16,11 +16,12 @@ const Navigation = props => {
             return props.sections.map(el => {
               if (el['_id'] === item['_ref']) {
                 return (
-                  <li>
+                  <li className="nav-item">
                     <img
                       src={`/images/${deriveSectionImage(
                         el.image.asset['_ref']
                       )}`}
+                      alt={`Image of ${el.name.en}`}
                     />
                     <h3>{el.name.en}</h3>
                   </li>
