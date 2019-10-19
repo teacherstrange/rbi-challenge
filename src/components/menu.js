@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { getMenu, getSections } from '../actions/actions';
+import { getMenu, getSections, getItems } from '../actions/actions';
 import { getMenuList } from '../helpers/deriving';
 import '../styles/main.scss';
 
@@ -10,6 +10,7 @@ const Menu = props => {
       {
         (window.onload = () => {
           props.getMenu();
+          props.getItems();
           return props.getSections();
         })
       }
@@ -32,5 +33,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { getMenu, getSections }
+  { getMenu, getSections, getItems }
 )(Menu);

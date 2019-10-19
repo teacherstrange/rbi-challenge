@@ -8,6 +8,10 @@ export const SECTIONS_FETCH_START = 'SECTIONS_FETCH_START';
 export const SECTIONS_FETCH_SUCCESS = 'SECTIONS_FETCH_SUCCESS';
 export const SECTIONS_FETCH_FAIL = 'SECTIONS_FETCH_FAIL';
 
+export const ITEMS_FETCH_START = 'ITEMS_FETCH_START';
+export const ITEMS_FETCH_SUCCESS = 'ITEMS_FETCH_SUCCESS';
+export const ITEMS_FETCH_FAIL = 'ITEMS_FETCH_FAIL';
+
 export const getMenu = () => dispatch => {
   dispatch({ type: MENU_FETCH_START });
   axios
@@ -26,4 +30,14 @@ export const getSections = () => dispatch => {
       dispatch({ type: SECTIONS_FETCH_SUCCESS, payload: res.data });
     })
     .catch(err => dispatch({ type: SECTIONS_FETCH_FAIL, payload: err }));
+};
+
+export const getItems = () => dispatch => {
+  dispatch({ type: ITEMS_FETCH_START });
+  axios
+    .get('http://localhost:3001/api/items')
+    .then(res => {
+      dispatch({ type: ITEMS_FETCH_SUCCESS, payload: res.data });
+    })
+    .catch(err => dispatch({ type: ITEMS_FETCH_FAIL, payload: err }));
 };

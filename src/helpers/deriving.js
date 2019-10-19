@@ -42,9 +42,7 @@ export const getMenuList = (sections, menuOptions, cssClass) => {
 export const getURLname = str => {
   let arr = str.toLowerCase().split(' ');
   if (arr[1] === '&') {
-    console.log(arr[0] + arr[2]);
     return arr[0] + arr[2];
   }
-  console.log(arr.join(''));
   return arr.join('');
 };

@@ -48,9 +48,11 @@
     font-family: 'Zrnic';
     text-align: center;
   }
-  h3:hover {
-    color: red;
-    text-decoration: underline;
+  &:hover {
+    h3 {
+      color: red;
+      text-decoration: underline;
+    }
   }
 }
 
