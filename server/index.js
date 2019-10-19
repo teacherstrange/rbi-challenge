@@ -18,13 +18,13 @@ app.get('/api/menu', cors(corsOptions), (req, res) => {
   }, 300);
 });
 
-app.get('/api/sections', (req, res) => {
+app.get('/api/sections', cors(corsOptions), (req, res) => {
   setTimeout(() => {
     res.json(sections);
   }, 300);
 });
 
-app.get('/api/items', (req, res) => {
+app.get('/api/items', cors(corsOptions), (req, res) => {
   setTimeout(() => {
     res.json(items);
   }, 800);
