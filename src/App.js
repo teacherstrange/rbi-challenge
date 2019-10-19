@@ -7,7 +7,7 @@ const App = () => {
   return (
     <div>
       <Navigation />
-      <Route path="/" component={Menu} />
+      <Route exact path="/" component={Menu} />
       {/* <Route path="/sample/:id" component={SomeComponent} /> */}
     </div>
   );
