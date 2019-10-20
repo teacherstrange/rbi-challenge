@@ -14,8 +14,6 @@ const Items = props => {
               if (item['_id'] === opt['_ref']) {
                 console.log(item);
                 return (
-                  //   do LINK later
-                  //   <Link to={`/`}>
                   <li className="main-item">
                     <img
                       src={`/images/${deriveSectionImage(
@@ -25,7 +23,6 @@ const Items = props => {
                     />
                     <h3>{item.name.en}</h3>
                   </li>
-                  //   </Link>
                 );
               }
             })
