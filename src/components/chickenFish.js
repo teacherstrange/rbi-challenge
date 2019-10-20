@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { getMenu, getSections, getItems } from '../actions/actions';
 import Items from './items';
 
-const ComboMeals = props => {
+const ChickenFish = props => {
   return (
     <>
       {
@@ -13,7 +13,7 @@ const ComboMeals = props => {
           return props.getSections();
         })
       }
-      <Items sectionId="f1a1695f-3af4-461c-96a0-4e98bff7e716" />
+      <Items sectionId="section_5597" />
     </>
   );
 };
@@ -21,4 +21,4 @@ const ComboMeals = props => {
 export default connect(
   null,
   { getItems, getMenu, getSections }
-)(ComboMeals);
+)(ChickenFish);
