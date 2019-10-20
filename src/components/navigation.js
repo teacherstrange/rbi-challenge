@@ -2,18 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import '../styles/navigation.scss';
 import { getMenuList } from '../helpers/deriving';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Navigation = props => {
   return (
     <div className="nav-container">
       <ul className="nav-list">
-        <Link to="/">
+        <NavLink activeClassName="current" exact to="/">
           <li className="nav-item logo">
-            <img src="/images/logo.png" />
+            <img src="/images/logo.png" alt="Burger King Logo" />
             <h3>HOME</h3>
           </li>
-        </Link>
+        </NavLink>
         {Object.entries(props.menu).length > 0 &&
         Object.entries(props.sections).length > 0 ? (
           getMenuList(props.sections, props.menu.options, 'nav-item')

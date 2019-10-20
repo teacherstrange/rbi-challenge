@@ -19,9 +19,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-
   a {
     text-decoration: none;
+  }
+  a.current {
+    color: red;
+    text-decoration: underline;
   }
   a:hover {
     text-decoration: none;
@@ -38,6 +41,7 @@
   flex-direction: column;
   justify-content: center;
   background: #efece6;
+
   img {
     border-radius: 0.5em;
     height: 7em;

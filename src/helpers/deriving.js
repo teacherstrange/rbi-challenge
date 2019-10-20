@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 // Takes in a reference string from sections "db" and
 // manipulates it in a way to make it look like a valid image name.
 export const deriveSectionImage = str => {
@@ -8,13 +8,13 @@ export const deriveSectionImage = str => {
 };
 
 // Returns a <li> list of menu items w/ name and image
-// that link to a specific more detailed section
+// that NavLink to a specific more detailed section
 export const getMenuList = (sections, menuOptions, cssClass) => {
   return menuOptions.map(item => {
     return sections.map(el => {
       if (el['_id'] === item['_ref']) {
         return (
-          <Link to={`/${getURLname(el.name.en)}`}>
+          <NavLink activeClassName="current" to={`/${getURLname(el.name.en)}`}>
             <li className={cssClass}>
               {cssClass !== 'nav-item' ? (
                 <img
@@ -31,7 +31,7 @@ export const getMenuList = (sections, menuOptions, cssClass) => {
               )}
               <h3>{el.name.en}</h3>
             </li>
-          </Link>
+          </NavLink>
         );
       }
     });
