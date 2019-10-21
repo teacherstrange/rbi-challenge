@@ -18,16 +18,18 @@ const App = () => {
   return (
     <div>
       <Navigation />
-      <Route exact path="/" component={Menu} />
-      <Route path="/combomeals" component={ComboMeals} />
-      <Route path="/flamegrilledbeef" component={FlameGrilledBeef} />
-      <Route path="/chickenfish" component={ChickenFish} />
-      <Route path="/saladsmore" component={SaladsMore} />
-      <Route path="/drinkscoffee" component={DrinksCoffee} />
-      <Route path="/sweets" component={Sweets} />
-      <Route path="/sides" component={Sides} />
-      <Route path="/kingjr." component={KingJr} />
-      <Route path="/specialoffers" component={SpecialOffers} />
+      <Router>
+        <Route exact path="/" component={Menu} />
+        <Route path="/combomeals" component={ComboMeals} />
+        <Route path="/flamegrilledbeef" component={FlameGrilledBeef} />
+        <Route path="/chickenfish" component={ChickenFish} />
+        <Route path="/saladsmore" component={SaladsMore} />
+        <Route path="/drinkscoffee" component={DrinksCoffee} />
+        <Route path="/sweets" component={Sweets} />
+        <Route path="/sides" component={Sides} />
+        <Route path="/kingjr." component={KingJr} />
+        <Route path="/specialoffers" component={SpecialOffers} />
+      </Router>
     </div>
   );
 };
